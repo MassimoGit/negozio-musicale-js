@@ -1,0 +1,43 @@
+@if (albums.length === 0) {
+  <p class="text-muted">Nessun album presente.</p>
+} @else {
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+      <thead class="table-primary">
+        <tr>
+          <th>Titolo</th>
+          <th>Anno</th>
+          <th>Prezzo (€)</th>
+          <th>Artista</th>
+          <th>Azioni</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (album of albums; track album.id) {
+          <tr>
+            <td>{{ album.title }}</td>
+            <td>{{ album.year }}</td>
+            <td>{{ album.price | number: '1.2-2' }}</td>
+            <td>{{ album.artist_name }}</td>
+            <td>
+              <div class="d-flex gap-2">
+                <button
+                  class="btn btn-sm btn-outline-secondary"
+                  (click)="edit.emit(album)"
+                >
+                  <i class="bi bi-pencil"></i> Modifica
+                </button>
+                <button
+                  class="btn btn-sm btn-danger"
+                  (click)="delete.emit(album.id)"
+                >
+                  <i class="bi bi-trash"></i> Elimina
+                </button>
+              </div>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+}

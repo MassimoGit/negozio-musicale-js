@@ -1,0 +1,164 @@
+{
+  "info": {
+    "name": "Negozio Musicale",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Artists",
+      "item": [
+        {
+          "name": "GET artists",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/artists"
+          }
+        },
+        {
+          "name": "POST artist",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Pink Floyd\",\n  \"genre\": \"Rock Progressivo\",\n  \"nationality\": \"British\"\n}"
+            },
+            "url": "{{base_url}}/api/artists"
+          }
+        },
+        {
+          "name": "POST artist 400 (campo mancante)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Artista senza genere\"\n}"
+            },
+            "url": "{{base_url}}/api/artists"
+          }
+        },
+        {
+          "name": "PUT artist",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"The Beatles\",\n  \"genre\": \"Rock\",\n  \"nationality\": \"British\"\n}"
+            },
+            "url": "{{base_url}}/api/artists/1"
+          }
+        },
+        {
+          "name": "DELETE artist",
+          "request": {
+            "method": "DELETE",
+            "url": "{{base_url}}/api/artists/3"
+          }
+        },
+        {
+          "name": "DELETE artist 404",
+          "request": {
+            "method": "DELETE",
+            "url": "{{base_url}}/api/artists/9999"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Albums",
+      "item": [
+        {
+          "name": "GET albums",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/albums"
+          }
+        },
+        {
+          "name": "POST album",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"The Wall\",\n  \"year\": 1979,\n  \"price\": 12.99,\n  \"artist_id\": 3\n}"
+            },
+            "url": "{{base_url}}/api/albums"
+          }
+        },
+        {
+          "name": "POST album 400 (campo mancante)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Album senza anno\",\n  \"price\": 9.99,\n  \"artist_id\": 1\n}"
+            },
+            "url": "{{base_url}}/api/albums"
+          }
+        },
+        {
+          "name": "POST album 404 (artista inesistente)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Album orfano\",\n  \"year\": 2000,\n  \"price\": 9.99,\n  \"artist_id\": 9999\n}"
+            },
+            "url": "{{base_url}}/api/albums"
+          }
+        },
+        {
+          "name": "PUT album",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Abbey Road (Remaster)\",\n  \"year\": 1969,\n  \"price\": 13.99,\n  \"artist_id\": 1\n}"
+            },
+            "url": "{{base_url}}/api/albums/1"
+          }
+        },
+        {
+          "name": "DELETE album",
+          "request": {
+            "method": "DELETE",
+            "url": "{{base_url}}/api/albums/2"
+          }
+        },
+        {
+          "name": "DELETE album 404",
+          "request": {
+            "method": "DELETE",
+            "url": "{{base_url}}/api/albums/9999"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000"
+    }
+  ]
+}

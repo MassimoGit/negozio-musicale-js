@@ -1,0 +1,41 @@
+@if (artists.length === 0) {
+  <p class="text-muted">Nessun artista presente.</p>
+} @else {
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+      <thead class="table-primary">
+        <tr>
+          <th>Nome</th>
+          <th>Genere</th>
+          <th>Nazionalità</th>
+          <th>Azioni</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (artist of artists; track artist.id) {
+          <tr>
+            <td>{{ artist.name }}</td>
+            <td>{{ artist.genre }}</td>
+            <td>{{ artist.nationality }}</td>
+            <td>
+              <div class="d-flex gap-2">
+                <button
+                  class="btn btn-sm btn-outline-secondary"
+                  (click)="edit.emit(artist)"
+                >
+                  <i class="bi bi-pencil"></i> Modifica
+                </button>
+                <button
+                  class="btn btn-sm btn-danger"
+                  (click)="delete.emit(artist.id)"
+                >
+                  <i class="bi bi-trash"></i> Elimina
+                </button>
+              </div>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+}

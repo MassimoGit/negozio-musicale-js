@@ -1,0 +1,55 @@
+<div class="card mb-4">
+  <div class="card-header">
+    <h5 class="mb-0">{{ initialArtist ? 'Modifica artista' : 'Nuovo artista' }}</h5>
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <label class="form-label fw-bold">Nome</label>
+          <input
+            class="form-control"
+            type="text"
+            name="name"
+            [(ngModel)]="formData.name"
+            [disabled]="isSubmitting"
+          />
+        </div>
+        <div class="col-md-4">
+          <label class="form-label fw-bold">Genere</label>
+          <input
+            class="form-control"
+            type="text"
+            name="genre"
+            [(ngModel)]="formData.genre"
+            [disabled]="isSubmitting"
+          />
+        </div>
+        <div class="col-md-4">
+          <label class="form-label fw-bold">Nazionalità</label>
+          <input
+            class="form-control"
+            type="text"
+            name="nationality"
+            [(ngModel)]="formData.nationality"
+            [disabled]="isSubmitting"
+          />
+        </div>
+      </div>
+      <div class="d-flex gap-2 mt-3">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="!isValid || isSubmitting"
+        >
+          {{ isSubmitting ? 'Salvataggio...' : initialArtist ? 'Modifica' : 'Salva nuovo' }}
+        </button>
+        @if (initialArtist) {
+          <button type="button" class="btn btn-secondary" (click)="cancel.emit()">
+            <i class="bi bi-backspace-fill me-2"></i> Torna alla creazione
+          </button>
+        }
+      </div>
+    </form>
+  </div>
+</div>

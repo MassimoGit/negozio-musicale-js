@@ -1,0 +1,42 @@
+====================================================
+ NEGOZIO MUSICALE — Avvio in locale
+====================================================
+
+----------------------------------------------------
+ 1. DATABASE
+----------------------------------------------------
+Aprire DBeaver, connettersi al server MySQL/TiDB ed
+eseguire il file:  database/schema.sql
+
+----------------------------------------------------
+ 2. FRONTEND ANGULAR
+----------------------------------------------------
+cd frontend-angular
+npm install
+npm start            (oppure: npx ng serve)
+App in ascolto su: http://localhost:4200
+
+
+----------------------------------------------------
+ 3. VARIABILI D'AMBIENTE (backend/.env)
+----------------------------------------------------
+DB_HOST=<host>
+DB_PORT=<porta>
+DB_USER=<utente>
+DB_PASSWORD=<password>
+DB_NAME=music_store
+DB_SSL=true          (false per MySQL locale)
+
+cd backend
+npm install
+npm start 
+
+Server in ascolto su: http://localhost:3000
+----------------------------------------------------
+ 6. BUILD DI PRODUZIONE
+----------------------------------------------------
+Angular:
+  cd frontend-angular
+  npm run build      -> output in dist/frontend-angular/browser/
+
+====================================================

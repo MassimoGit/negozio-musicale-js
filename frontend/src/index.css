@@ -1,0 +1,79 @@
+/* ── Palette personalizzata ─────────────────────────────────── */
+:root {
+  --music-purple:  #6f42c1;
+  --music-dark:    #1a1a2e;
+  --music-muted:   #6c757d;
+  --music-light:   #f8f9fa;
+}
+
+/* ── Body ───────────────────────────────────────────────────── */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: var(--music-light);
+  color: #212529;
+}
+
+/* ── Navbar personalizzata ──────────────────────────────────── */
+.navbar {
+  background: linear-gradient(90deg, #6f42c1 0%, #4a2a8a 100%) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Card con ombra ─────────────────────────────────────────── */
+.card {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border: 1px solid #dee2e6;
+}
+
+/* ── Tabella: hover sulle righe ─────────────────────────────── */
+.table tbody tr:hover {
+  background-color: #ede7f6;
+  transition: background-color 0.15s ease;
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.footer {
+  background-color: var(--music-dark);
+  color: #adb5bd;
+  padding: 18px 5%;
+  margin-top: auto;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-brand {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.footer-brand i {
+  margin-right: 6px;
+  color: #c9a7f0;
+}
+
+.footer-copy {
+  font-size: 0.875rem;
+}
+
+.footer-version {
+  font-size: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2px 10px;
+  border-radius: 999px;
+  color: #ced4da;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 576px) {
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
