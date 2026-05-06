@@ -1,0 +1,43 @@
+/* Stili globali — Negozio Musicale (Angular) */
+
+/* Navbar con gradiente viola */
+.navbar {
+  background: linear-gradient(135deg, #2d1b5e 0%, #4a2a8a 50%, #6f42c1 100%) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Card con ombra */
+.card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: none;
+}
+
+/* Righe tabella con hover */
+.table tbody tr:hover {
+  background-color: rgba(111, 66, 193, 0.05);
+  transition: background-color 0.15s ease;
+}
+
+/* Footer scuro */
+footer {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d1b5e 100%);
+  color: #adb5bd;
+  font-size: 0.875rem;
+}
+
+/* Bottoni navbar attivi */
+.navbar .btn-outline-light.active,
+.navbar .btn-outline-light:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1rem;
+  }
+  .table th,
+  .table td {
+    font-size: 0.85rem;
+  }
+}
